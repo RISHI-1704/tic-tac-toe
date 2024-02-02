@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+body {
+    background-color: #4D3C77;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    text-align: center;
+    color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    color: #DCFFB7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.board {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer;
+    position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+
+.tile {
+    width: 2rem;
+    height: 2rem;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right-border {
+    border-right: 0.2em solid #35A29F;
+}
+
+.bottom-border {
+    border-bottom: 0.2em solid #35A29F;
+}
+
+.footer {
+    margin-top: 2.5rem;
+}
+
+.footer .reset {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.winner {
+    color: #ffff00;
+}
+
+.x-hover:hover::after {
+    content: "X";
+    opacity: 0.4;
+}
+
+.o-hover:hover::after {
+    content: "O";
+    opacity: 0.4;
+}
+
+.strike {
+    position: absolute;
+    background-color: darkorange;
+}
+
+.strike-row-1 {
+    width: 100%;
+    height: 4px;
+    top: 15%;
+}
+
+.strike-row-2 {
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+
+.strike-row-3 {
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+
+.strike-column-1 {
+    height: 100%;
+    width: 4px;
+    left: 15%;
+}
+
+.strike-column-2 {
+    height: 100%;
+    width: 4px;
+    left: 48%;
+}
+
+.strike-column-3 {
+    height: 100%;
+    width: 4px;
+    left: 83%;
+}
+
+.strike-diagonal-1 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-2 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+
+.tile {
+    color: #cbf078;
+}
+
+.game-over {
+    margin-top: 5rem;
+    font-size: x-large;
+    color: #a8e6cf;
+    text-align: center;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-btn {
+    font-size: larger;
+    margin-top: 1.5rem;
+    width: 10rem;
+    height: 2rem;
+}
+
+.winning-points {
+    color: #cbf078;
+    font-size: x-large;
+    font-weight: bolder;
 }
